@@ -71,7 +71,7 @@ router.delete("/:id", validateUserId, (req, res) => {
 router.put("/:id", validateUserId, (req, res) => {
   Users.update(req.user.id, req.body)
     .then((user) => {
-      res.status(500).json(user);
+      res.status(200).json(user);
     })
     .catch(() => {
       res.status(500).json({
